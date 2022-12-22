@@ -13,7 +13,7 @@
             </b-col>
         </b-row>
         <b-row>
-            <b-col md="6" style="text-align: left; margin-left: 88px; margin-top: 20px;"> Hello, {{ text }} </b-col>
+            <b-col md="6" style="text-align: left; margin-left: 88px; margin-top: 20px;"> Hello, {{ text }}. Have a nice day</b-col>
         </b-row>
     </b-container>
 
