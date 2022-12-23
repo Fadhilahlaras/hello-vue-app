@@ -14,6 +14,7 @@
                         </template>
                         <b-dropdown-item href="#/event-listeners">Event Listeners</b-dropdown-item>
                         <b-dropdown-item href="#/form-bindings">Form Bindings</b-dropdown-item>
+                        <b-dropdown-item href="#/list-rendering">List Rendering</b-dropdown-item>
                     </b-nav-item-dropdown>
                 </b-navbar-nav>
 
@@ -53,11 +54,13 @@
     import HelloWorld from './HelloWorld.vue'
     import FormBindings from './Topic/FormBindings.vue'
     import EventListeners from './Topic/EventListeners.vue'
+    import ListRendering from './Topic/ListRendering.vue'
 
     const routes = {
         '/home': HelloWorld,
         '/form-bindings': FormBindings,
-        '/event-listeners' : EventListeners
+        '/event-listeners' : EventListeners,
+        '/list-rendering' : ListRendering
     }
 
     export default {
