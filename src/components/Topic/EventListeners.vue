@@ -13,7 +13,7 @@
                     img-top-tag="article"
                     class="mb-2"
                     >
-                    <img id="show-modal" @click="showModal = true" class="card-img-top" src="../../assets/bada.jpg" alt="Image">
+                    <img id="show-modal" @click="showModal = true" class="card-img-top" src="../../assets/sky.jpg" alt="Image">
                     <b-card-text> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. </b-card-text>
                     <b-card-text> Total Like : {{ count }} </b-card-text>
                 </b-card>
