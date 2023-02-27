@@ -7,80 +7,86 @@
 
     <b-container>
         <b-row class="mt-4">
-            <b-col v-for="card in cards" :key="card.id" cols="4">
+            <b-col v-for="card in cards" :key="card.id" cols="4" class="p-3">
             <b-card
                 :title="`Card ${card.id}`"
                 img-top-tag="article"
                 class="mb-2"
+                @click="showModal(card.id)"
+
             >
                 <img
                 :id="`show-modal-${card.id}`"
-                @click="showModal = card.id"
                 class="card-img-top"
                 :src="require(`../../assets/kota/${card.id}.jpg`)"
                 alt="Image"
+                width="300px" 
+                height="300px"
                 />
-                <b-card-text> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. </b-card-text>
+                <b-card-text> {{ card.text }} </b-card-text>
                 <b-card-text> Total Like : {{ card.count }} </b-card-text>
             </b-card>
             <button @click="increment(card.id)"> Like </button>
             <button @click="decrement(card.id)" style="margin-left:20px"> Dislike </button>
-            <!-- <Teleport to="body">
-                <modal
-                :show="showModal === card.id"
-                @close="showModal = null"
-                >
-                <template #header>
-                    <h3>custom header</h3>
-                </template>
-                </modal>
-            </Teleport> -->
+            <b-modal v-model="show" size="sm">
+                <b-img :src="require(`../../assets/kota/${selectedCard}.jpg`)" fluid alt="Image" />
+            </b-modal>
             </b-col>
         </b-row>
     </b-container>
-
-
   </div>
 </template>
 
 <script>
 
     // import Modal from '../Topic/ModalEvent.vue'
+    import { BCard, BCardText, BModal, BImg } from 'bootstrap-vue'
 
     export default {
         name: 'EventListeners',
+        components: {
+            BCard,
+            BCardText,
+            BModal,
+            BImg,
+        },
         data() {
             return {
                 titleClass: 'titleEvent',
                 count: 0,
-                showModal: false,
                 cards: [
-                    { id: 1, count: 0 },
-                    { id: 2, count: 0 },
-                    { id: 3, count: 0 }
-                ]
+                    { id: 1, count: 0, text: "DKI Jakarta" },
+                    { id: 2, count: 0, text: "Surabaya" },
+                    { id: 3, count: 0, text: "Bandung" },
+                    { id: 4, count: 0, text: "Jogyakarta" }
+                ],
+                selectedCard: 1,
+                show: false
             }
         },
         // components: {
         //     Modal
         // },
-    methods: {
-        increment(cardId) {
-            const card = this.cards.find(c => c.id === cardId)
-            card.count++
-        },
-        decrement(cardId) {
-            const card = this.cards.find(c => c.id === cardId)
-            if(card.count <= 0) {
-                alert("The count already 0")
-            } else {
-                card.count--
+        methods: {
+            showModal(id) {
+                console.log(id)
+                this.selectedCard = id
+                this.show = true
+            },
+            increment(cardId) {
+                const card = this.cards.find(c => c.id === cardId)
+                card.count++
+            },
+            decrement(cardId) {
+                const card = this.cards.find(c => c.id === cardId)
+                if(card.count <= 0) {
+                    alert("The count already 0")
+                } else {
+                    card.count--
+                }
             }
-        }
+        },       
     }
-
-    }
-
 </script>
 
 
