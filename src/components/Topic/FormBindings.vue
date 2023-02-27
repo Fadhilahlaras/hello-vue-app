@@ -31,12 +31,19 @@
         data() {
             return {
                 text: '',
-                titleClass: 'titleForm'
+                titleClass: 'titleForm',
+                regex: /^[a-zA-Z]*$/ // regular expression untuk huruf saja
             }
         },
         methods: {
-            onInput(e) {
-            this.text = e.target.value
+            onInput(event) {
+                // this.text = e.target.value
+                const inputText = event.target.value;
+                if (this.regex.test(inputText)) {
+                    this.text = inputText;
+                } else {
+                    event.target.value = this.text;
+                }
             }
         }
     }
