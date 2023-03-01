@@ -12,7 +12,7 @@
                 :title="`Card ${card.id}`"
                 img-top-tag="article"
                 class="mb-2"
-                @click="showModal(card.id)"
+                @click="showModal(card.id, card.title, card.message)"
 
             >
                 <img
@@ -28,8 +28,9 @@
             </b-card>
             <button @click="increment(card.id)"> Like </button>
             <button @click="decrement(card.id)" style="margin-left:20px"> Dislike </button>
-            <b-modal v-model="show" size="sm">
+            <b-modal v-model="show" size="sm" :title="`${selectedCardTitle} City`">
                 <b-img :src="require(`../../assets/kota/${selectedCard}.jpg`)" fluid alt="Image" />
+                <b-card-text>{{ selectedCardMessage }}</b-card-text>            
             </b-modal>
             </b-col>
         </b-row>
@@ -55,22 +56,26 @@
                 titleClass: 'titleEvent',
                 count: 0,
                 cards: [
-                    { id: 1, count: 0, text: "DKI Jakarta" },
-                    { id: 2, count: 0, text: "Surabaya" },
-                    { id: 3, count: 0, text: "Bandung" },
-                    { id: 4, count: 0, text: "Jogyakarta" }
+                    { id: 1, count: 0, title: "DKI Jakarta" },
+                    { id: 2, count: 0, title: "Surabaya", message: "Surabaya is the second largest city in Indonesia after Jakarta. Surabaya is also a Centre for business, Commerce, industry, and education in East Java as well as the eastern Indonesia region." },
+                    { id: 3, count: 0, title: "Bandung" },
+                    { id: 4, count: 0, title: "Jogyakarta" }
                 ],
                 selectedCard: 1,
-                show: false
+                selectedCardTitle: 1,
+                show: false,
+                selectedCardMessage: 1
             }
         },
         // components: {
         //     Modal
         // },
         methods: {
-            showModal(id) {
+            showModal(id, title, message) {
                 console.log(id)
                 this.selectedCard = id
+                this.selectedCardMessage = message;
+                this.selectedCardTitle = title;
                 this.show = true
             },
             increment(cardId) {
