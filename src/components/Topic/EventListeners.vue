@@ -28,7 +28,7 @@
             </b-card>
             <button @click="increment(card.id)"> Like </button>
             <button @click="decrement(card.id)" style="margin-left:20px"> Dislike </button>
-            <b-modal v-model="show" size="sm" :title="`${selectedCardTitle} City`">
+            <b-modal v-model="show" :title="`${selectedCardTitle} City`">
                 <b-img :src="require(`../../assets/kota/${selectedCard}.jpg`)" fluid alt="Image" />
                 <b-card-text>{{ selectedCardMessage }}</b-card-text>            
             </b-modal>
@@ -56,15 +56,15 @@
                 titleClass: 'titleEvent',
                 count: 0,
                 cards: [
-                    { id: 1, count: 0, title: "DKI Jakarta" },
+                    { id: 1, count: 0, title: "DKI Jakarta", message: "Jakarta is the capital and most populous city of the Republic of Indonesia. Located on the northwest coast of the world’s most populous island of Java, Jakarta is the country’s economic, cultural and political center. The official metropolitan area, known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest in the world." },
                     { id: 2, count: 0, title: "Surabaya", message: "Surabaya is the second largest city in Indonesia after Jakarta. Surabaya is also a Centre for business, Commerce, industry, and education in East Java as well as the eastern Indonesia region." },
                     { id: 3, count: 0, title: "Bandung" },
                     { id: 4, count: 0, title: "Jogyakarta" }
                 ],
                 selectedCard: 1,
                 selectedCardTitle: 1,
-                show: false,
-                selectedCardMessage: 1
+                selectedCardMessage: 0,
+                show: false
             }
         },
         // components: {
@@ -77,6 +77,8 @@
                 this.selectedCardMessage = message;
                 this.selectedCardTitle = title;
                 this.show = true
+                console.log(message)
+
             },
             increment(cardId) {
                 const card = this.cards.find(c => c.id === cardId)
