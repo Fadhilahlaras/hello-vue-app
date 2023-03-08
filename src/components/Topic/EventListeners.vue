@@ -29,7 +29,7 @@
             <button @click="increment(card.id)"> Like </button>
             <button @click="decrement(card.id)" style="margin-left:20px"> Dislike </button>
             <b-modal v-model="show" :title="`${selectedCardTitle} City`">
-                <b-img :src="require(`../../assets/kota/${selectedCard}.jpg`)" fluid alt="Image" />
+                <!-- <b-img :src="require(`../../assets/kota/${selectedCard}.jpg`)" fluid alt="Image" /> -->
                 <b-card-text>{{ selectedCardMessage }}</b-card-text>            
             </b-modal>
             </b-col>
@@ -41,7 +41,7 @@
 <script>
 
     // import Modal from '../Topic/ModalEvent.vue'
-    import { BCard, BCardText, BModal, BImg } from 'bootstrap-vue'
+    import { BCard, BCardText, BModal } from 'bootstrap-vue'
 
     export default {
         name: 'EventListeners',
@@ -49,7 +49,7 @@
             BCard,
             BCardText,
             BModal,
-            BImg,
+            // BImg,
         },
         data() {
             return {
