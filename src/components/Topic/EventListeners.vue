@@ -59,7 +59,7 @@
                     { id: 1, count: 0, title: "DKI Jakarta", message: "Jakarta is the capital and most populous city of the Republic of Indonesia. Located on the northwest coast of the worlds most populous island of Java, Jakarta is the countrys economic, cultural and political center. The official metropolitan area, known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest in the world." },
                     { id: 2, count: 0, title: "Surabaya", message: "Surabaya is the second largest city in Indonesia after Jakarta. Surabaya is also a Centre for business, Commerce, industry, and education in East Java as well as the eastern Indonesia region." },
                     { id: 3, count: 0, title: "Bandung", message: "Bandung is the capital of West Java in Indonesia. Bandung is 180 kilometers southeast from Jakarta. Although it has a population of over two million the pace of city life is slower than Jakarta." },
-                    { id: 4, count: 0, title: "Jogyakarta" }
+                    { id: 4, count: 0, title: "Jogyakarta", message: "A vacation in Indonesia gives tons of unforgettable experience to tourists. The country even has some special regions, including Yogyakarta City. People also call it Jogja. The location is in Java Island and it is known for numerous allures like culture, traditional foods, natural attractions, beaches, arts, and much more" }
                 ],
                 selectedCard: 1,
                 selectedCardTitle: 1,
