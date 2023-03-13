@@ -33,7 +33,7 @@
                 text: '',
                 titleClass: 'titleForm',
                 regex: /^[a-zA-Z]*$/, // regular expression untuk huruf saja
-                duration: 3000 
+                duration: 1000 
             }
         },
         methods: {
@@ -46,7 +46,7 @@
                     alert("This field can only be filled with text input. Please check it again.");
                     event.target.value = this.text;
                         setTimeout(() => {
-                            alert(null);
+                            // alert(null);
                         }, this.duration);
                 }
             }
